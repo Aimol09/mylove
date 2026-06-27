@@ -194,3 +194,32 @@ I Love You ❤️`);
 },900);
 
 };
+document.getElementById("nextBtn").addEventListener("click",()=>{
+
+document.body.innerHTML=`
+
+<div style="height:100vh;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#ff2d55,#8e2de2);color:white;font-family:Poppins,sans-serif;text-align:center;flex-direction:column;">
+
+<h1 style="font-size:55px;">❤️ I LOVE YOU AKRITI ❤️</h1>
+
+<p style="font-size:25px;margin-top:20px;">
+Thank You For Reading My Heart 💖
+</p>
+
+<div style="font-size:80px;margin-top:30px;animation:pulse 1s infinite;">
+❤️
+</div>
+
+</div>
+
+<style>
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.2);}
+100%{transform:scale(1);}
+}
+</style>
+
+`;
+
+});
