@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+.card{
+width:90%;
+max-width:600px;
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+text-align:center;
+animation:fade .5s;
+}
+
+h1{
+margin-bottom:20px;
+color:#ff3b6b;
+}
+
+p{
+font-size:22px;
+margin:20px 0;
+}
+
+button{
+margin-top:20px;
+padding:14px 35px;
+border:none;
+background:#ff3b6b;
+color:white;
+font-size:18px;
+border-radius:40px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+#yes{
+display:none;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.heart{
+position:fixed;
+color:red;
+animation:float 6s linear infinite;
+font-size:25px;
+opacity:.7;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-100px);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1 id="title">3 Things I Want From You ❤️</h1>
+
+<p id="text"></p>
+
+<button onclick="next()">Next ❤️</button>
+
+<button id="yes" onclick="love()">Yes ❤️</button>
+
+</div>
+
+<script>
+
+const slides=[
+"1. A Hug 🤍",
+"2. A Kiss 💋",
+"3. Your Love ❤️",
+"😏 You really thought there were only 3?",
+`4. Your smile 😊<br>
+5. Your laugh 😂<br>
+6. Your trust 🤍<br>
+7. Your hand in mine 🤝<br>
+8. Your time ⏰<br>
+9. Your support 🌸<br>
+10. Growing old together ❤️<br><br>
+
+Actually...<br><br>
+
+I don't want 100 things.<br>
+I just want YOU. ❤️`,
+"Will you let me love you forever? 💖"
+];
+
+let i=0;
+
+document.getElementById("text").innerHTML=slides[0];
+
+function next(){
+
+i++;
+
+if(i<slides.length){
+
+document.getElementById("text").innerHTML=slides[i];
+
+if(i==slides.length-1){
+document.querySelector("button").style.display="none";
+document.getElementById("yes").style.display="inline-block";
+}
+
+}
+
+}
+
+function love(){
+
+document.querySelector(".card").innerHTML=`
+<h1>❤️ Thank You ❤️</h1>
+
+<p>
+I'll keep making you smile.<br><br>
+
+I'll hug you whenever you need one 🤍<br>
+
+I'll kiss you whenever you want 💋<br>
+
+I'll love you every single day ❤️
+</p>
+
+<h2>Forever ♾️</h2>
+`;
+
+}
+
+function hearts(){
+
+const h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(20+Math.random()*30)+"px";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+
+h.remove();
+
+},6000);
+
+}
+
+setInterval(hearts,300);
+
+</script>
+
+</body>
+</html>
