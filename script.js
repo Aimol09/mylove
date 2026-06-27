@@ -174,3 +174,23 @@ document.querySelector(".flap").style.transform="rotateX(180deg)";
 document.querySelector(".letter").style.top="5%";
 
 });
+document.getElementById("openLetter").onclick = function () {
+
+document.querySelector(".flap").style.transform="rotateX(180deg)";
+document.querySelector(".letter").style.top="5%";
+
+setTimeout(()=>{
+
+alert(`❤️ Dear Akriti ❤️
+
+This note isn't handwritten because of my handwriting...
+
+It's written with every feeling in my heart.
+
+Every word you are about to read comes from a place where only you exist.
+
+I Love You ❤️`);
+
+},900);
+
+};
