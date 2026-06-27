@@ -1,204 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>For Akriti ❤️</title>
 
-<style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-body{
-background:linear-gradient(135deg,#ffdde1,#ee9ca7);
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-overflow:hidden;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-.card{
-width:90%;
-max-width:600px;
-background:white;
-padding:40px;
-border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
-text-align:center;
-animation:fade .5s;
-}
+<link rel="stylesheet" href="style.css">
 
-h1{
-margin-bottom:20px;
-color:#ff3b6b;
-}
-
-p{
-font-size:22px;
-margin:20px 0;
-}
-
-button{
-margin-top:20px;
-padding:14px 35px;
-border:none;
-background:#ff3b6b;
-color:white;
-font-size:18px;
-border-radius:40px;
-cursor:pointer;
-transition:.3s;
-}
-
-button:hover{
-transform:scale(1.08);
-}
-
-#yes{
-display:none;
-}
-
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-.heart{
-position:fixed;
-color:red;
-animation:float 6s linear infinite;
-font-size:25px;
-opacity:.7;
-}
-
-@keyframes float{
-from{
-transform:translateY(100vh);
-}
-to{
-transform:translateY(-100px);
-}
-}
-
-</style>
 </head>
 
 <body>
 
-<div class="card">
+<!-- Floating Hearts -->
+<div id="hearts"></div>
 
-<h1 id="title">3 Things I Want From You ❤️</h1>
+<!-- Password Screen -->
 
-<p id="text"></p>
+<section id="passwordScreen">
 
-<button onclick="next()">Next ❤️</button>
+<div class="glass">
 
-<button id="yes" onclick="love()">Yes ❤️</button>
+<h1>❤️ For Akriti ❤️</h1>
+
+<p>This little website is only for one person.</p>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password">
+
+<button id="unlockBtn">
+
+Unlock ❤️
+
+</button>
+
+<p id="wrong"></p>
 
 </div>
 
-<script>
+</section>
 
-const slides=[
-"1. A Hug 🤍",
-"2. A Kiss 💋",
-"3. Your Love ❤️",
-"😏 You really thought there were only 3?",
-`4. Your smile 😊<br>
-5. Your laugh 😂<br>
-6. Your trust 🤍<br>
-7. Your hand in mine 🤝<br>
-8. Your time ⏰<br>
-9. Your support 🌸<br>
-10. Growing old together ❤️<br><br>
+<!-- Loading -->
 
-Actually...<br><br>
+<section id="loadingScreen" class="hidden">
 
-I don't want 100 things.<br>
-I just want YOU. ❤️`,
-"Will you let me love you forever? 💖"
-];
+<div class="loader"></div>
 
-let i=0;
+<h2>Unlocking My Heart...</h2>
 
-document.getElementById("text").innerHTML=slides[0];
+</section>
 
-function next(){
+<!-- Intro -->
 
-i++;
+<section id="intro" class="hidden">
 
-if(i<slides.length){
+<div class="glass introBox">
 
-document.getElementById("text").innerHTML=slides[i];
+<h1>Hello Akriti ❤️</h1>
 
-if(i==slides.length-1){
-document.querySelector("button").style.display="none";
-document.getElementById("yes").style.display="inline-block";
-}
+<p id="typing"></p>
 
-}
+<button id="continueBtn">
 
-}
+Continue ➜
 
-function love(){
+</button>
 
-document.querySelector(".card").innerHTML=`
-<h1>❤️ Thank You ❤️</h1>
+</div>
 
-<p>
-I'll keep making you smile.<br><br>
+</section>
 
-I'll hug you whenever you need one 🤍<br>
-
-I'll kiss you whenever you want 💋<br>
-
-I'll love you every single day ❤️
-</p>
-
-<h2>Forever ♾️</h2>
-`;
-
-}
-
-function hearts(){
-
-const h=document.createElement("div");
-
-h.className="heart";
-
-h.innerHTML="❤️";
-
-h.style.left=Math.random()*100+"vw";
-
-h.style.fontSize=(20+Math.random()*30)+"px";
-
-document.body.appendChild(h);
-
-setTimeout(()=>{
-
-h.remove();
-
-},6000);
-
-}
-
-setInterval(hearts,300);
-
-</script>
+<script src="script.js"></script>
 
 </body>
+
 </html>
