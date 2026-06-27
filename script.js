@@ -151,3 +151,26 @@ opacity:0;
 `;
 
 document.head.appendChild(style);
+// Continue Button
+
+document
+.getElementById("continueBtn")
+.addEventListener("click",()=>{
+
+document.getElementById("intro").classList.add("hidden");
+
+document.getElementById("envelopeSection").classList.remove("hidden");
+
+});
+
+// Open Envelope
+
+document
+.getElementById("openLetter")
+.addEventListener("click",()=>{
+
+document.querySelector(".flap").style.transform="rotateX(180deg)";
+
+document.querySelector(".letter").style.top="5%";
+
+});
