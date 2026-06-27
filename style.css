@@ -312,7 +312,7 @@ background:white;
 
 left:5%;
 
-top:100%;
+top:5%;
 
 padding:20px;
 
@@ -323,6 +323,8 @@ transition:1s;
 overflow:auto;
 
 color:#222;
+
+z-index:6;
 
 }
 
